@@ -12,7 +12,7 @@ Rottenpotatoes::Application.configure do
 
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
   config.assets.js_compressor = :uglifier
@@ -34,7 +34,7 @@ Rottenpotatoes::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  config.log_level = :debug
+  # config.log_level = :debug
 
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new
