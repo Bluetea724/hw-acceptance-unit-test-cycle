@@ -1,0 +1,26 @@
+
+
+Started GET "/" for 50.24.57.238 at 2019-10-22 00:50:31 +0000
+
+
+Started GET "/movies" for 50.24.57.238 at 2019-10-22 00:50:31 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: movies: SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')):
+    18:       %th{:class => @date_header}= link_to 'Release Date', movies_path(:sort => 'release_date', :ratings => @selected_ratings), :id => 'release_date_header'
+    19:       %th More Info
+    20:   %tbody
+    21:     - @movies.each do |movie|
+    22:       %tr
+    23:         %td= movie.title 
+    24:         %td= movie.rating
+  app/views/movies/index.html.haml:21:in `_app_views_movies_index_html_haml__2079299730460928651_39889940'
+
+
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.4.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.5ms)
